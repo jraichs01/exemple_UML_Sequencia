@@ -1,0 +1,17 @@
+sequenceDiagram
+    participant C as Client (Main)
+    participant W as Cambrer (Waiter)
+    participant M as Màquina (CoffeeMachine)
+
+    Note over C: L'usuari executa el programa
+    C->>W: takeOrder("Espresso")
+    activate W
+    
+    W->>M: brew()
+    activate M
+    Note right of M: Processant cafè...
+    M-->>W: (cafè llest)
+    deactivate M
+    
+    W-->>C: "Aquí té el seu cafè"
+    deactivate W
