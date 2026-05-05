@@ -1,0 +1,13 @@
+@startuml
+skinparam actorStyle awesome
+
+actor "Client" as User
+
+package "Sistema de Cafeteria" {
+    usecase "Demanar Cafè" as UC1
+    usecase "Preparar Cafè" as UC2
+}
+
+User -> UC1
+UC1 ..> UC2 : <<include>>
+@enduml

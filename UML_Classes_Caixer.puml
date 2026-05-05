@@ -1,0 +1,26 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Caixer {
+    {static} +main(args: String[])
+}
+
+class CaixerAutomatic {
+    -banc: SistemaBancari
+    -dispensador: Dispensador
+    +operar(pin: int, quantitat: int)
+}
+
+class SistemaBancari {
+    +validarPIN(pin: int): boolean
+    +verificarSaldo(quantitat: int): boolean
+}
+
+class Dispensador {
+    +lliurarEfectiu(quantitat: int)
+}
+
+Caixer ..> CaixerAutomatic : "instancia"
+CaixerAutomatic "1" *-- "1" SistemaBancari : "utilitza"
+CaixerAutomatic "1" *-- "1" Dispensador : "controla"
+@enduml

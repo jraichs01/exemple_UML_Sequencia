@@ -1,0 +1,37 @@
+@startuml
+autonumber
+skinparam style strictuml
+
+actor Usuari
+participant "Caixer" as Main
+participant "atm: CaixerAutomatic" as ATM
+participant "banc: SistemaBancari" as Banc
+participant "dispensador: Dispensador" as Disp
+
+Usuari -> Main : executar programa
+activate Main
+
+Main -> ATM : operar(1234, 50)
+activate ATM
+
+ATM -> Banc : validarPIN(1234)
+activate Banc
+Banc --> ATM : true
+deactivate Banc
+
+ATM -> Banc : verificarSaldo(50)
+activate Banc
+Banc --> ATM : true
+deactivate Banc
+
+ATM -> Disp : lliurarEfectiu(50)
+activate Disp
+Note over Disp: Imprimeix: "Entregant 50€..."
+Disp --> ATM
+deactivate Disp
+
+ATM -> Main : Imprimeix: "Reculli els seus diners."
+deactivate ATM
+
+deactivate Main
+@enduml

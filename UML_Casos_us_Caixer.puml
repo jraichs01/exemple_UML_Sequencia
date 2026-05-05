@@ -1,0 +1,23 @@
+@startuml
+left to right direction
+skinparam actorStyle awesome
+
+actor "Client del Banc" as User
+
+package "Sistema Caixer Automàtic" {
+    usecase "Treure Diners" as UC1
+    usecase "Validar PIN" as UC2
+    usecase "Verificar Saldo" as UC3
+    usecase "Lliurar Efectiu" as UC4
+}
+
+User --> UC1
+
+UC1 ..> UC2 : <<include>>
+UC1 ..> UC3 : <<include>>
+UC1 ..> UC4 : <<include>>
+
+note right of UC4
+  Executat pel Dispensador
+end note
+@enduml

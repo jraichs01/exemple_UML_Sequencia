@@ -1,0 +1,16 @@
+classDiagram
+    class Main {
+        +main(args: String[])$ void
+    }
+
+    class Waiter {
+        -machine: CoffeeMachine
+        +takeOrder(coffeeType: String) void
+    }
+
+    class CoffeeMachine {
+        +brew() void
+    }
+
+    Main ..> Waiter : "instancia i crida"
+    Waiter "1" *-- "1" CoffeeMachine : "conté / delega"
