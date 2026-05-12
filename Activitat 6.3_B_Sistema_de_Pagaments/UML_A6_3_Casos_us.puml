@@ -1,0 +1,12 @@
+@startuml
+left to right direction
+actor Usuari
+
+rectangle "Sistema SmartHome" {
+  usecase "Alternar Llum" as UC1
+  usecase "Programar Horari" as UC2
+}
+
+Usuari --> UC1
+Usuari --> UC2
+@enduml

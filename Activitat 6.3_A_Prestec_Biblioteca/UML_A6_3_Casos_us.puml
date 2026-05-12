@@ -1,0 +1,12 @@
+@startuml
+left to right direction
+actor "Usuari de Biblioteca" as user
+
+rectangle "Sistema de Gestió" {
+  usecase "Realitzar Préstec" as UC1
+  usecase "Consultar Disponibilitat" as UC2
+}
+
+user --> UC1
+user --> UC2
+@enduml

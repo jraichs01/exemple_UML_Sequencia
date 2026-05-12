@@ -1,0 +1,22 @@
+@startuml
+participant ":SistemaBiblioteca" as Sistema
+participant "u:Usuari" as Usuari
+participant "l:Llibre" as Llibre
+
+[-> Sistema : gestionarPrestec(u, l)
+activate Sistema
+
+Sistema -> Usuari : demanarPrestec(l)
+activate Usuari
+
+Usuari -> Llibre : prestar()
+activate Llibre
+Llibre --> Usuari : (ok)
+deactivate Llibre
+
+Usuari --> Sistema : (fet)
+deactivate Usuari
+
+[<-- Sistema : operació finalitzada
+deactivate Sistema
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+autonumber
+participant "MainDomotica" as M
+participant "elMeuHub:HubDomotic" as H
+participant "llumSaló:Llum" as L
+
+M -> L** : new Llum("Llum del Saló")
+M -> H** : new HubDomotic()
+
+M -> H : activarDispositiu(llumSaló)
+activate H
+
+H -> L : executarAccio()
+activate L
+note right: Polimorfisme: s'executa\nla lògica de Llum
+L --> H : status update
+deactivate L
+
+H --> M : confirmació
+deactivate H
+@enduml

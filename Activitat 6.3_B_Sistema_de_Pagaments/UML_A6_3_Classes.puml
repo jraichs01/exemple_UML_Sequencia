@@ -1,0 +1,26 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+abstract class Dispositiu {
+    # nom: String
+    # encès: boolean
+    + {abstract} executarAccio(): void
+}
+
+class Llum {
+    + executarAccio(): void
+}
+
+class HubDomotic {
+    + activarDispositiu(d: Dispositiu): void
+}
+
+class MainDomotica {
+    + {static} main(args: String[]): void
+}
+
+Dispositiu <|-- Llum : "és un"
+HubDomotic ..> Dispositiu : "controla"
+MainDomotica ..> HubDomotic : "usa"
+MainDomotica ..> Llum : "crea"
+@enduml

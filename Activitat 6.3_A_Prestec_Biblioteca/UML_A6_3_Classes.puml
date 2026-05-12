@@ -1,0 +1,19 @@
+@startuml
+class Llibre {
+  - String titol
+  - boolean disponible
+  + prestar(): void
+}
+
+class Usuari {
+  - String nom
+  + demanarPrestec(llibre: Llibre): void
+}
+
+class SistemaBiblioteca {
+  + gestionarPrestec(u: Usuari, l: Llibre): void
+}
+
+SistemaBiblioteca ..> Usuari : "fa servir"
+Usuari -> Llibre : "demana"
+@enduml
