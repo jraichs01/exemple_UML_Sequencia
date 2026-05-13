@@ -3,10 +3,9 @@ left to right direction
 actor Usuari
 
 rectangle "Sistema SmartHome" {
-  usecase "Alternar Llum" as UC1
-  usecase "Programar Horari" as UC2
+  usecase "Obrir Llum" as UC1
 }
 
 Usuari --> UC1
-Usuari --> UC2
+
 @enduml

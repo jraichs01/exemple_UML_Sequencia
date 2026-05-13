@@ -42,4 +42,6 @@ public class Caixer {
         CaixerAutomatic atm = new CaixerAutomatic();
         atm.operar(1234, 50); // Simulem l'usuari posant el PIN i demanant 50€
     }
+
+
 }

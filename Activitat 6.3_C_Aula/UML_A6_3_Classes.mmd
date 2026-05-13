@@ -1,0 +1,33 @@
+classDiagram
+    class Persona {
+        #String nom
+    }
+
+    class Alumne {
+        -int edat
+        +Alumne(String nom, int edat)
+    }
+
+    class Assignatura {
+        #String nom
+        -int credits
+        +Assignatura(String nom, int credits)
+    }
+
+    class Matricula {
+        #Alumne alumne
+        #Assignatura assignatura
+        +Matricula(Alumne alumne, Assignatura assignatura)
+    }
+
+    class Academia {
+        -ArrayList~Matricula~ matricules
+        +Academia()
+        +matricular(Alumne alumne, Assignatura assignatura)
+        +mostrarMatricules()
+    }
+
+    Persona <|-- Alumne : Herència
+    Academia *-- Matricula : Composició
+    Matricula --> Alumne : Referencia
+    Matricula --> Assignatura : Referencia

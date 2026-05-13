@@ -1,4 +1,6 @@
 @startuml
+skinparam classAttributeIconSize 0
+
 class Llibre {
   - String titol
   - boolean disponible

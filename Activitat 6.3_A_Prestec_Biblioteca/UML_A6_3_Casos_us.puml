@@ -1,12 +1,14 @@
 @startuml
 left to right direction
 actor "Usuari de Biblioteca" as user
+actor "Bibliotecari" as librarian
 
 rectangle "Sistema de Gestió" {
-  usecase "Realitzar Préstec" as UC1
-  usecase "Consultar Disponibilitat" as UC2
+  usecase "Demanar llibre" as UC1
+  usecase "Prestar llibre" as UC2
+
 }
 
 user --> UC1
-user --> UC2
+librarian --> UC2
 @enduml

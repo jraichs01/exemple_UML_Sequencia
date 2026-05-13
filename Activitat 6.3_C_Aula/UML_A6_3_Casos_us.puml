@@ -1,0 +1,10 @@
+@startuml
+left to right direction
+actor Usuari
+
+rectangle "Sistema d'Acadèmia" {
+  Usuari -- (Matricular Alumne)
+  Usuari -- (Mostrar Matrícules)
+  Usuari -- (Sortir de l'Aplicació)
+}
+@enduml

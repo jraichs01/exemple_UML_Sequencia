@@ -1,7 +1,7 @@
 // Classe base
 abstract class Dispositiu {
     protected String nom;
-    protected boolean encès = false;
+    protected boolean ences = false;
 
     public Dispositiu(String nom) { this.nom = nom; }
     public abstract void executarAccio(); // Mètode abstracte
@@ -13,8 +13,8 @@ class Llum extends Dispositiu {
     
     @Override
     public void executarAccio() {
-        this.encès = !this.encès;
-        System.out.println(nom + " està ara " + (encès ? "ENCÈS" : "APAGAT"));
+        this.ences = !this.ences;
+        System.out.println(nom + " està ara " + (ences ? "ENCÈS" : "APAGAT"));
     }
 }
 

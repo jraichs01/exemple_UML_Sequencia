@@ -1,0 +1,18 @@
+sequenceDiagram
+    actor Usuari
+    participant Main
+    participant Al as Alumne
+    participant As as Assignatura
+    participant Ac as Academia
+    participant M as Matricula
+
+    Usuari->>Main: Tria Opció 1 i introdueix dades
+    Main->>Al: new Alumne(nom, edat)
+    Main->>As: new Assignatura(nom, credits)
+    Main->>Ac: matricular(alumne, assignatura)
+    activate Ac
+    Ac->>M: new Matricula(alumne, assignatura)
+    Ac->>Ac: add(matricula)
+    Ac-->>Main: Acadèmia actualitzada
+    deactivate Ac
+    Main->>Usuari: Torna al Menú Principal
